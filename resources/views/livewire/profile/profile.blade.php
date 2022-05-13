@@ -4,7 +4,7 @@
         Profile
     </h2>
     <div class="grid gap-6 mb-8 md:grid-cols-3">
-        <div class="min-w-0 p-4  dark:text-gray-200 dark:bg-gray-800 bg-white rounded-lg shadow text-center">
+        <div class="min-w-0 p-4  dark:text-gray-200 dark:bg-gray-800 bg-purple-600 text-white rounded-lg shadow text-center">
             <img @if ($user->profile_img) src="{{ asset('storage/' . $user->profile_img) }}"
                 @else
                 src="{{ asset('images/profile/profile_avater.png') }}" @endif
