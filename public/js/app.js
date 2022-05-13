@@ -5119,6 +5119,19 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /***/ }),
 
+/***/ "./resources/css/app.css":
+/*!*******************************!*\
+  !*** ./resources/css/app.css ***!
+  \*******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./node_modules/lodash/lodash.js":
 /*!***************************************!*\
   !*** ./node_modules/lodash/lodash.js ***!
@@ -22331,19 +22344,6 @@ var __WEBPACK_AMD_DEFINE_RESULT__;/**
 
 /***/ }),
 
-/***/ "./resources/css/app.css":
-/*!*******************************!*\
-  !*** ./resources/css/app.css ***!
-  \*******************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
 /***/ "./node_modules/process/browser.js":
 /*!*****************************************!*\
   !*** ./node_modules/process/browser.js ***!
@@ -22545,7 +22545,7 @@ process.umask = function() { return 0; };
 /***/ (function(module) {
 
 /*!
-* sweetalert2 v11.4.13
+* sweetalert2 v11.4.14
 * Released under the MIT License.
 */
 (function (global, factory) {
@@ -23827,6 +23827,16 @@ process.umask = function() { return 0; };
     closeButton.setAttribute('aria-label', params.closeButtonAriaLabel);
   };
 
+  /**
+   * @typedef { import('sweetalert2') } SweetAlert2
+   * @typedef { import('sweetalert2').SweetAlertOptions } SweetAlertOptions
+   */
+
+  /**
+   * @param {SweetAlert2} instance
+   * @param {SweetAlertOptions} params
+   */
+
   const renderIcon = (instance, params) => {
     const innerParams = privateProps.innerParams.get(instance);
     const icon = getIcon(); // if the given icon already rendered, apply the styling without re-rendering the icon
@@ -23854,6 +23864,10 @@ process.umask = function() { return 0; };
 
     addClass(icon, params.showClass.icon);
   };
+  /**
+   * @param {HTMLElement} icon
+   * @param {SweetAlertOptions} params
+   */
 
   const applyStyles = (icon, params) => {
     for (const iconType in iconTypes) {
@@ -23884,6 +23898,10 @@ process.umask = function() { return 0; };
 
   const successIconHtml = "\n  <div class=\"swal2-success-circular-line-left\"></div>\n  <span class=\"swal2-success-line-tip\"></span> <span class=\"swal2-success-line-long\"></span>\n  <div class=\"swal2-success-ring\"></div> <div class=\"swal2-success-fix\"></div>\n  <div class=\"swal2-success-circular-line-right\"></div>\n";
   const errorIconHtml = "\n  <span class=\"swal2-x-mark\">\n    <span class=\"swal2-x-mark-line-left\"></span>\n    <span class=\"swal2-x-mark-line-right\"></span>\n  </span>\n";
+  /**
+   * @param {HTMLElement} icon
+   * @param {SweetAlertOptions} params
+   */
 
   const setContent = (icon, params) => {
     icon.textContent = '';
@@ -23903,6 +23921,11 @@ process.umask = function() { return 0; };
       setInnerHtml(icon, iconContent(defaultIconHtml[params.icon]));
     }
   };
+  /**
+   * @param {HTMLElement} icon
+   * @param {SweetAlertOptions} params
+   */
+
 
   const setColor = (icon, params) => {
     if (!params.iconColor) {
@@ -23918,8 +23941,22 @@ process.umask = function() { return 0; };
 
     setStyle(icon, '.swal2-success-ring', 'borderColor', params.iconColor);
   };
+  /**
+   * @param {string} content
+   */
+
 
   const iconContent = content => "<div class=\"".concat(swalClasses['icon-content'], "\">").concat(content, "</div>");
+
+  /**
+   * @typedef { import('sweetalert2') } SweetAlert2
+   * @typedef { import('sweetalert2').SweetAlertOptions } SweetAlertOptions
+   */
+
+  /**
+   * @param {SweetAlert2} instance
+   * @param {SweetAlertOptions} params
+   */
 
   const renderImage = (instance, params) => {
     const image = getImage();
@@ -23940,23 +23977,15 @@ process.umask = function() { return 0; };
     applyCustomClass(image, params, 'image');
   };
 
-  const createStepElement = step => {
-    const stepEl = document.createElement('li');
-    addClass(stepEl, swalClasses['progress-step']);
-    setInnerHtml(stepEl, step);
-    return stepEl;
-  };
+  /**
+   * @typedef { import('sweetalert2') } SweetAlert2
+   * @typedef { import('sweetalert2').SweetAlertOptions } SweetAlertOptions
+   */
 
-  const createLineElement = params => {
-    const lineEl = document.createElement('li');
-    addClass(lineEl, swalClasses['progress-step-line']);
-
-    if (params.progressStepsDistance) {
-      lineEl.style.width = params.progressStepsDistance;
-    }
-
-    return lineEl;
-  };
+  /**
+   * @param {SweetAlert2} instance
+   * @param {SweetAlertOptions} params
+   */
 
   const renderProgressSteps = (instance, params) => {
     const progressStepsContainer = getProgressSteps();
@@ -23986,6 +24015,33 @@ process.umask = function() { return 0; };
       }
     });
   };
+  /**
+   * @param {string} step
+   * @returns {HTMLLIElement}
+   */
+
+  const createStepElement = step => {
+    const stepEl = document.createElement('li');
+    addClass(stepEl, swalClasses['progress-step']);
+    setInnerHtml(stepEl, step);
+    return stepEl;
+  };
+  /**
+   * @param {SweetAlertOptions} params
+   * @returns {HTMLLIElement}
+   */
+
+
+  const createLineElement = params => {
+    const lineEl = document.createElement('li');
+    addClass(lineEl, swalClasses['progress-step-line']);
+
+    if (params.progressStepsDistance) {
+      applyNumericalStyle(lineEl, 'width', params.progressStepsDistance);
+    }
+
+    return lineEl;
+  };
 
   const renderTitle = (instance, params) => {
     const title = getTitle();
@@ -24002,6 +24058,16 @@ process.umask = function() { return 0; };
 
     applyCustomClass(title, params, 'title');
   };
+
+  /**
+   * @typedef { import('sweetalert2') } SweetAlert2
+   * @typedef { import('sweetalert2').SweetAlertOptions } SweetAlertOptions
+   */
+
+  /**
+   * @param {SweetAlert2} instance
+   * @param {SweetAlertOptions} params
+   */
 
   const renderPopup = (instance, params) => {
     const container = getContainer();
@@ -24032,6 +24098,10 @@ process.umask = function() { return 0; };
 
     addClasses(popup, params);
   };
+  /**
+   * @param {HTMLElement} popup
+   * @param {SweetAlertOptions} params
+   */
 
   const addClasses = (popup, params) => {
     // Default Class + showClass when updating Swal.update({})
@@ -26083,7 +26153,7 @@ process.umask = function() { return 0; };
     };
   });
   SweetAlert.DismissReason = DismissReason;
-  SweetAlert.version = '11.4.13';
+  SweetAlert.version = '11.4.14';
 
   const Swal = SweetAlert; // @ts-ignore
 

@@ -11,7 +11,8 @@
 - jantinnerezo/livewire-alert
 - wire-elements/modal
 
-
+---
+>If you want to change layout file then follow the below instruction otherwise no need.
 
 ## Livewire
 ---
@@ -66,6 +67,13 @@
 ```
 >[Livewire-Modal Official Documentation.](https://github.com/wire-elements/modal/blob/main/README.md)
 
+### Auto Browser Refresh
+---
+I have added `browser-sync` for auto refresh browser after change your code.
 
+For running:
+```powershell
+npm run watch
+```
 
   

@@ -12,3 +12,7 @@ npm-debug.log
 yarn-error.log
 /.idea
 /.vscode
+.jpg
+.png
+.pdf
+.jpeg

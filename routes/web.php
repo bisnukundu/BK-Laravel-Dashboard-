@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Profile\Profile;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::middleware('auth')->group(function(){
+    // Profile
+    Route::get('/profile',Profile::class)->name('profile');
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
