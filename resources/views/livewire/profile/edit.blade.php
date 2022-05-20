@@ -1,4 +1,4 @@
-<x-modal formAction="update_profile">
+<x-modal_b formAction="update_profile">
     <x-slot name="title">
         Edit Profile
     </x-slot>
@@ -24,4 +24,4 @@
         </div>
 
     </x-slot>
-</x-modal>
+</x-modal_b>

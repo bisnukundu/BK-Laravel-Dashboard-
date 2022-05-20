@@ -15,12 +15,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-   return redirect()->route('login');
+    //    return redirect()->route('login');
+    return view("welcome");
 });
 
-Route::middleware('auth')->group(function(){
+Route::middleware('auth')->group(function () {
     // Profile
-    Route::get('/profile',Profile::class)->name('profile');
+    Route::get('/profile', Profile::class)->name('profile');
 });
 
 
@@ -28,4 +29,4 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
