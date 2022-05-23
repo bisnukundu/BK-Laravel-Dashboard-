@@ -18,6 +18,7 @@ Route::get('/', function () {
     //    return redirect()->route('login');
     return view("welcome");
 });
+Route::view('/powergrid', 'powergrid-demo');
 
 Route::middleware('auth')->group(function () {
     // Profile

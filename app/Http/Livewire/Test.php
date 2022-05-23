@@ -11,6 +11,7 @@ class Test extends Component
     public $myModa;
     use LivewireAlert;
     use Actions;
+
     public function render()
     {
         return view('livewire.test');
@@ -29,4 +30,5 @@ class Test extends Component
     {
         dd($t);
     }
+
 }

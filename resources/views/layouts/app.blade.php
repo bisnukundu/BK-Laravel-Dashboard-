@@ -10,6 +10,7 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="{{ asset('css/app.css') }}" />
     @livewireStyles
+    @powerGridStyles
     @wireUiScripts
     <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="{{ asset('js/init-alpine.js') }}"></script>
@@ -38,6 +39,10 @@
         </div>
     </div>
     @livewireScripts
+    {{-- Power Grid Start  --}}
+    @powerGridScripts
+    {{-- Power Grid End  --}}
+
     <x-livewire-alert::scripts />
     @livewire('livewire-ui-modal')
 </body>

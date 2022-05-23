@@ -12,6 +12,7 @@
         "laravel/sanctum": "^2.14.1",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.10",
+        "power-components/livewire-powergrid": "^2.4",
         "wire-elements/modal": "^1.0",
         "wireui/wireui": "^1.1"
     },

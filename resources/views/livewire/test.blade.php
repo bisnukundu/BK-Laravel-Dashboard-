@@ -17,7 +17,7 @@
     </x-modal> --}}
 
     <x-button wire:click="test" label="Test" />
-
+<livewire:users />
 
 
 </div>
